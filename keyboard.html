@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //var color1 = "pink"
+        //var color2 = "blue"
+        function press(letter) {
+            var x = document.querySelector('.A');
+            var y = document.querySelector('.B');
+            if (letter == '-')
+                y.innerHTML = '';
+            else
+                y.innerHTML += letter;
+        }
+        function color(co) {
+            var x = document.querySelector('.B');
+            x.style.color = co
+        }
+        function Backgroundcolor(co) {
+            var x = document.querySelector('.B');
+            x.style.backgroundColor = co
+        }
+        function fonts(fontt) {
+            var x = document.querySelector('.B');
+            x.style.fontSize = fontt;
+        }
+        function textt(side) {
+            var x = document.querySelector('.B');
+            x.style.textAlign = side;
+        }
+    </script>
+    <style>
+        .A {
+            height: 60px;
+            width: 60px;
+            color: black;
+            font-weight: bold;
+            font-size: 15px;
+            background-color: white;
+            border: 2px solid black;
+            text-align: center;
+            padding: 4px 4px;
+            margin: 4px;
+            display: inline-block;
+            cursor: pointer;
+            font-family: Levenim MT;
+        }
+        .colors {
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            padding: 4px 4px;
+            margin: 4px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .font {
+            height: 20px;
+            width: 20px;
+            padding: 4px 4px;
+            margin: 4px;
+            display: inline-block;
+            cursor: pointer;
+            border:2px solid black;
+        }
+        .B {
+            height: 100px;
+            width: auto;
+            color: black;
+            background-color: white;
+            border: 2px solid black;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 20px;
+            margin: 20px auto;
+            font-family: Levenim MT;
+            font-display:auto;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="text-align:center;width:500px;margin:auto;">
+        <div class="B"></div>
+        <div class="A" onclick="press('ו')">ו</div>
+        <div class="A" onclick="press('ה')">ה</div>
+        <div class="A" onclick="press('ד')">ד</div>
+        <div class="A" onclick="press('ג')">ג</div>
+        <div class="A" onclick="press('ב')">ב</div>
+        <div class="A" onclick="press('א')">א</div>
+        <br />
+        <div class="A" onclick="press('ל')">ל</div>
+        <div class="A" onclick="press('כ')">כ</div>
+        <div class="A" onclick="press('י')">י</div>
+        <div class="A" onclick="press('ט')">ט</div>
+        <div class="A" onclick="press('ח')">ח</div>
+        <div class="A" onclick="press('ז')">ז</div>
+        <br />
+        <div class="A" onclick="press('צ')">צ</div>
+        <div class="A" onclick="press('פ')">פ</div>
+        <div class="A" onclick="press('ע')">ע</div>
+        <div class="A" onclick="press('ס')">ס</div>
+        <div class="A" onclick="press('נ')">נ</div>
+        <div class="A" onclick="press('מ')">מ</div>
+        <div class="A" onclick="press(' ')" style="width: 70%; height: 60px; font-size: 15px; ">רווח</div>
+        <div class="A" onclick="press('-')" style="width: 20%; height: 60px; font-size: 15px;">מחק הכל</div>
+        <!--12תרגיל-->
+        <div class="colors" style="background-color:aqua" onclick="color('aqua')"></div>
+        <div class="colors" style="background-color:hotpink" onclick="color('hotpink')"></div>
+        <div class="colors" style="background-color:chocolate" onclick="color('chocolate')"></div>
+        <div class="colors" style="background-color:crimson" onclick="color('crimson')"></div>
+        <div class="colors" style="background-color:mediumseagreen" onclick="color('mediumseagreen')"></div>
+        <div class="colors" style="background-color:steelblue" onclick="color('steelblue')"></div>
+        <div class="colors" style="cursor:auto;font-size:15px;">שינוי צבע טקסט</div>
+        <br />
+        <div class="colors" style="background-color:aqua" onclick="Backgroundcolor('aqua')"></div>
+        <div class="colors" style="background-color:hotpink" onclick="Backgroundcolor('hotpink')"></div>
+        <div class="colors" style="background-color:chocolate" onclick="Backgroundcolor('chocolate')"></div>
+        <div class="colors" style="background-color:crimson" onclick="Backgroundcolor('crimson')"></div>
+        <div class="colors" style="background-color:mediumseagreen" onclick="Backgroundcolor('mediumseagreen')"></div>
+        <div class="colors" style="background-color:steelblue" onclick="Backgroundcolor('steelblue')"></div>
+        <div class="colors" style="cursor: auto; font-size: 15px;">שינוי צבע רקע</div>
+        <br />
+        <div class="font" onclick="fonts('14')">14</div>
+        <div class="font" onclick="fonts('16')">16</div>
+        <div class="font" onclick="fonts('18')">18</div>
+        <div class="font" onclick="fonts('20')">20</div>
+        <div class="font" onclick="fonts('22')">22</div>
+        <div class="font" onclick="fonts('24')">24</div>
+        <div class="colors" style="cursor:auto;font-size:15px;">שינוי גודל טקסט</div>
+        <br />
+        <div class="font" onclick="textt('left')">יישור טקסט לשמאל</div>
+        <div class="font" onclick="textt('center')">יישור טקסט למרכז</div>
+        <div class="font" onclick="textt('right')">יישור טקסט למרכז</div>
+    </div>
+</body>
+</html>
