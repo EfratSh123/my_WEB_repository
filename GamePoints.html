@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body > div {
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+            position: relative;
+            margin: auto;
+        }
+        body div:nth-child(2){}
+        body > span {
+            border: 1px solid black;
+        }
+        [balls] {
+            height: 40px;
+            width: 40px;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            position: absolute;
+        }
+        [l1] {
+            height: 40px;
+            width: 40px;
+        }
+
+        [l2] {
+            height: 30px;
+            width: 30px;
+        }
+        [l3] {
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+    <script>
+        var t;
+        var level = 1;
+        var status = 'false';
+        function createBall() {
+            var x = document.querySelector('body >div');
+
+            //var level = document.querySelector('[type="radio" name="level]').value;
+
+
+            var ball = document.createElement('div');
+            x.appendChild(ball);
+            ball.setAttribute('balls', "");
+            ball.style.top = Math.round(Math.random() * 460) + "px";
+            ball.style.left = Math.round(Math.random() * 460) + "px";
+            var r = Math.round(Math.random() * 256);
+            var b = Math.round(Math.random() * 256);
+            var g = Math.round(Math.random() * 256);
+            ball.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            ball.setAttribute("onclick", "stop(this)")
+        }
+        function timer() {
+            status = 'true';
+            t = setInterval(createBall, 1000);
+        }
+        function stop(b1) {
+            b1.remove();
+            var x = document.querySelector('body >div').children;
+            if (x.length == 0) {
+                alert("End game:)");
+                clearInterval(t);
+            }
+        }
+        function changeRange(level1) {
+            console.log(level1)
+            level = level1
+            if (status == 'true') {
+                clearInterval(t);
+                if (level1 == 1)
+                    t = setInterval(createBall, 1000);
+                if (level1 == 2)
+                    t = setInterval(createBall, 800);
+                if (level1 == 3)
+                    t = setInterval(createBall, 600);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <span onclick="timer()">Start Game</span>
+    <br />
+    <br />
+    <span 1>Level:</span>
+    <input ll1 type="radio" name="level" onclick="changeRange(1)" checked="checked" />level 1
+    <input ll2 type="radio" name="level" onclick="changeRange(2)" />level 2
+    <input ll3 type="radio" name="level" onclick="changeRange(3)" />level 3
+    <div></div>
+</body>
+</html>
